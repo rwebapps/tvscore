@@ -11,9 +11,9 @@
 #'    age=c(24, 54, 32, 75),
 #'    marital=c("MARRIED", "DIVORCED", "WIDOWED", "NEVER MARRIED")
 #' )
-#' scoring(mydata)
-scoring <- function(input){
+#' tv(mydata)
+tv <- function(input){
   input <- as.data.frame(input)
-  input$tv_prediction <- predict(mymodel, newdata = input)
+  input$tv_prediction <- predict(tv_model, newdata = input)
   return(input)
 }

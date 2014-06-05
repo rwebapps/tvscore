@@ -1,8 +1,8 @@
-#' @name mymodel
+#' @name tv_model
 #' @title TV watching model
 #' @description Simple example model that predicts hours of watching TV from age and marital status
 #' @docType data
-#' @usage mymodel
+#' @usage tv_model
 #' @format a \code{\link{glm}} object
 #' @source General Social Survey - NORC
 NULL
