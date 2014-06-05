@@ -14,12 +14,12 @@ This package illustrates how to deploy a model for remote scoring/prediction.
       age=c(24, 54, 32, 75),
       marital=c("MARRIED", "DIVORCED", "WIDOWED", "NEVER MARRIED")
     )
-    tv(mydata)
+    tv(input = mydata)
 
     # Score remotely
     curl https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv \
       -H "Content-Type: application/json" \
-      -d '[ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"} ]'
+      -d '{"input" : [ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"} ]}'
       
 The model is included in the `data` directory in the source package. It was created
 using the [createmodel.R](https://github.com/jeroenooms/scoring/blob/master/createmodel.R) script.

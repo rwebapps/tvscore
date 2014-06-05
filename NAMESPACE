@@ -1,3 +1,2 @@
 export(tv)
-importFrom(splines,bs)
 importFrom(stats,predict)

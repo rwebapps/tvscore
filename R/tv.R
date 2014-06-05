@@ -4,7 +4,6 @@
 #' ("MARRIED", 'DIVORCED", "WIDOWED or "NEVER MARRIED").
 #' 
 #' @export
-#' @importFrom splines bs
 #' @importFrom stats predict
 #' @param input data passed on as \code{newdata} to \code{\link{predict}}
 #' @examples mydata <- data.frame(
