@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCPU Scoring Application</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Simple scoring engine</h1>
+
+    <p>Package includes a model that predicts hours of watching tv from age and marital status. Model was created using <a href="../tv/createmodel.R"><code>createmodel.R</code></a>.</p>
+
+    <img class="img-rounded img-responsive" src="../tv/viz.png">
+
+    <h2>Score individual values</h2>
+
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input type="number" min="20" max="80" class="form-control" placeholder="Age">
+      </div>
+      <div class="form-group">
+        <select class="form-control">
+          <option>MARRIED</option>
+          <option>DIVORCED</option>
+          <option>WIDOWED</option>
+          <option>NEVER MARRIED</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default">Score</button>
+    </form>
+
+    <h2>Batch score</h2>
+
+    The <a href="../R/tv">tv</a> scoring function supports both data as well as CSV data. Try using <a href="../tv/testdata.csv">testdata.csv</a>.
+
+  </div>
+
+
+
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</body>
+</html>

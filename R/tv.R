@@ -12,7 +12,13 @@
 #' )
 #' tv(mydata)
 tv <- function(input){
-  input <- as.data.frame(input)
-  input$tv_prediction <- predict(tv_model, newdata = input)
-  return(input)
+  #input can either be csv file or data	
+  if(is.character(input) && file.exists(input)){
+  	newdata <- read.csv(input)
+  } else {
+  	newdata <- as.data.frame(input)
+  }
+  #tv_model is included with the package
+  newdata$tv_prediction <- predict(tv_model, newdata = newdata)
+  return(newdata)
 }
