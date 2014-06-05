@@ -17,7 +17,7 @@ This package illustrates how to deploy a model for remote scoring/prediction.
     tv(input = mydata)
 
     # Score remotely
-    curl https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv \
+    curl https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv/json \
       -H "Content-Type: application/json" \
       -d '{"input" : [ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"} ]}'
       
