@@ -22,4 +22,4 @@ This package illustrates how to deploy a model for remote scoring/prediction.
       -d '[ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"} ]'
       
 The model is included in the `data` directory in the source package. It was created
-using the `createmodel.R` script.
+using the [createmodel.R](https://github.com/jeroenooms/scoring/blob/master/createmodel.R) script.
