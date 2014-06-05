@@ -24,4 +24,4 @@ This package illustrates how to deploy a model for remote scoring/prediction.
 The model is included in the `data` directory of the package, and was created
 using the [createmodel.R](https://github.com/jeroenooms/scoring/blob/master/inst/tv/createmodel.R) script. It predicts hours per day of TV watching from age and marital status. The model looks like this:
 
-![model viz](http://i.imgur.com/zRWLbbq.png)
+![model viz](https://raw.githubusercontent.com/jeroenooms/scoring/master/inst/tv/viz.png)
