@@ -18,7 +18,8 @@ tv <- function(input){
   } else {
   	newdata <- as.data.frame(input)
   }
+  input$age <- as.numeric(input$age)
+
   #tv_model is included with the package
-  newdata$tv_prediction <- predict(tv_model, newdata = newdata)
-  return(newdata)
+  predict(tv_model, newdata = newdata)
 }

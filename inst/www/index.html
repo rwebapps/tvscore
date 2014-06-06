@@ -20,18 +20,14 @@
     <h2>Score individual values</h2>
 
     <form class="form-inline" role="form">
-      <div class="form-group">
-        <input type="number" min="20" max="80" class="form-control" placeholder="Age">
-      </div>
-      <div class="form-group">
-        <select class="form-control">
-          <option>MARRIED</option>
-          <option>DIVORCED</option>
-          <option>WIDOWED</option>
-          <option>NEVER MARRIED</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-default">Score</button>
+      <table class="table table-bordered">
+        <thead>
+          <tr><th>Age</th><th>Marital Status</th><th>TV score</th></tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <button type="button" id="scorebutton" class="btn btn-success btn-lg">Score all values!</button>
     </form>
 
     <h2>Batch score</h2>
@@ -40,9 +36,9 @@
 
   </div>
 
-
-
   <script src="jquery.min.js"></script>
   <script src="bootstrap.min.js"></script>
+  <script src="opencpu.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
