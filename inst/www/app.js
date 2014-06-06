@@ -7,6 +7,7 @@ $(function(){
 		addrow();
 	}
 
+	//Handler for basic RPC
 	$("#scorebutton").click(function(){
 		$(".tvfield").val("")
 		var data = [];
@@ -19,11 +20,35 @@ $(function(){
 		
 		//RPC request to score data
 		var req = ocpu.rpc("tv", {input : data}, function(output){
+			//repopulate the table
 			$("tbody tr").each(function(i){
-				$(this).find(".tvfield").val(output[i]);
+				$(this).find(".agefield").val(output[i].age);
+				$(this).find(".maritalfield").val(output[i].marital);
+				$(this).find(".tvfield").val(output[i].tv);
 			});
 		}).fail(function(){
 			alert(req.responseText);
 		});
 	});
+
+	//CSV file scoring
+	$("#csvfile").on("change", function loadfile(e){
+		if(!$("#csvfile").val()) return;
+		var req = ocpu.call("tv", {
+			input : $("#csvfile")[0].files[0]
+		}, function(tmp){
+			$("#outputcsv").removeClass("hide").attr("href", tmp.getLoc() + "R/.val/csv")
+		}).fail(function(){
+			alert(req.responseText)
+		})
+	});
+
+	//update the example curl line with the current server
+	$("#curlcode").text(
+		$("#curlcode").text().replace(
+			"https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv/json", 
+			window.location.href.match(".*/scoring/")[0] + "R/tv/json"
+		)
+	)
 });
+

@@ -18,8 +18,12 @@ tv <- function(input){
   } else {
   	newdata <- as.data.frame(input)
   }
-  input$age <- as.numeric(input$age)
+  stopifnot("age" %in% names(newdata))
+  stopifnot("marital" %in% names(newdata))
+  
+  newdata$age <- as.numeric(newdata$age)
 
   #tv_model is included with the package
-  predict(tv_model, newdata = newdata)
+  newdata$tv <- predict(tv_model, newdata = newdata)
+  return(newdata)
 }

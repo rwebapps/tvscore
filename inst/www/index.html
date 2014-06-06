@@ -13,11 +13,25 @@
   <div class="container">
     <h1>Simple scoring engine</h1>
 
-    <p>Package includes a model that predicts hours of watching tv from age and marital status. Model was created using <a href="../tv/createmodel.R"><code>createmodel.R</code></a>.</p>
+    <p>The <a href="../R">scoring</a> package includes a <a href="../data/tv_model">model</a> and a <a href="../R/tv">scoring function</a> to predicts hours of watching tv from age and marital status. The model was created using the <a href="../tv/createmodel.R"><code>createmodel.R</code></a> script.</p>
 
     <img class="img-rounded img-responsive" src="../tv/viz.png">
 
-    <h2>Score individual values</h2>
+    <div class="page-header">
+      <h2>Curl example</h2>
+    </div>
+
+    <p>To call the <code>tv</code> function with <code>curl</code> using basic <a href="https://www.opencpu.org/api.html#api-json">JSON RPC</a>:</p>
+
+    <pre class="highlight" id="curlcode">
+curl https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv/json \
+-H "Content-Type: application/json" \
+-d '{"input" : [ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"}, {"age":53, "marital":"NEVER MARRIED"} ]}'
+    </pre>
+
+    <div class="page-header">
+      <h2>Score invidual values</h2>
+    </div>
 
     <form class="form-inline" role="form">
       <table class="table table-bordered">
@@ -27,12 +41,23 @@
         <tbody>
         </tbody>
       </table>
-      <button type="button" id="scorebutton" class="btn btn-success btn-lg">Score all values!</button>
+      <div class="text-center">
+        <button type="button" id="scorebutton" class="btn btn-primary btn-lg">Score all values!</button>
+      </div>
     </form>
 
-    <h2>Batch score</h2>
+    <div class="page-header">
+      <h2>Batch score CSV file</h2>
+    </div>
 
-    The <a href="../R/tv">tv</a> scoring function supports both data as well as CSV data. Try using <a href="../tv/testdata.csv">testdata.csv</a>.
+    <form role="form">
+      <div class="form-group">
+        <p class="help-block">Select a CSV file with predictor values <code>age</code> and <code>marital</code> (<a href="../tv/testdata.csv">example data</a>).</p>
+        <input class="btn btn-primary btn-lg" type="file" id="csvfile"> 
+        <a class="btn btn-success btn-lg hide" target="_blank" id="outputcsv">Output CSV</a>
+      </div>
+      
+    </form>
 
   </div>
 
