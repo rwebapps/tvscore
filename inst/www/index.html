@@ -13,7 +13,7 @@
   <div class="container">
     <h1>Simple scoring engine</h1>
 
-    <p>The <a href="../R">scoring</a> package includes a <a href="../data/tv_model">model</a> and a <a href="../R/tv">scoring function</a> to predicts hours of watching tv from age and marital status. The model was created using the <a href="../tv/createmodel.R"><code>createmodel.R</code></a> script.</p>
+    <p>The <a href="../R">tvscore</a> package includes a <a href="../data/tv_model">model</a> and a <a href="../R/tv">scoring function</a> to predicts hours of watching tv from age and marital status. The model was created using the <a href="../tv/createmodel.R"><code>createmodel.R</code></a> script.</p>
 
     <img class="img-rounded img-responsive" src="../tv/viz.png">
 
@@ -24,7 +24,7 @@
     <p>To call the <code>tv</code> function with <code>curl</code> using basic <a href="https://www.opencpu.org/api.html#api-json">JSON RPC</a>:</p>
 
     <pre class="highlight" id="curlcode">
-curl https://public.opencpu.org/ocpu/github/jeroenooms/scoring/R/tv/json \
+curl https://public.opencpu.org/ocpu/github/opencpu/tvscore/R/tv/json \
 -H "Content-Type: application/json" \
 -d '{"input" : [ {"age":26, "marital" : "MARRIED"}, {"age":41, "marital":"DIVORCED"}, {"age":53, "marital":"NEVER MARRIED"} ]}'
     </pre>

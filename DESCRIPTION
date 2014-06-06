@@ -1,4 +1,4 @@
-Package: scoring
+Package: tvscore
 Type: Package
 Title: Score data to predict TV hours
 Version: 0.1
