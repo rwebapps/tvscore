@@ -12,6 +12,10 @@ library(splines)
 mydata <- na.omit(GSS[c("age", "tvhours", "marital")])
 tv_model <- glm(tvhours ~ bs(age, 3) * marital , data = mydata)
 
+#GAM model
+library(mgcv)
+tv_model2 <- gam(tvhours ~ s(age, by=marital), data = mydata)
+
 #Vizualize the model
 library(ggplot2)
 qplot(age, predict(tv_model), color=marital, geom="line", data=mydata, main="example model") +
