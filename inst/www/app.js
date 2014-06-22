@@ -1,14 +1,7 @@
 $(function(){
-	function addrow(){
-		$("tbody").append('<tr> <td> <div class="form-group"> <input type="number" min="20" max="80" class="form-control agefield" placeholder="Age"> </div> </td> <td> <div class="form-group"> <select class="form-control maritalfield"> <option>MARRIED</option> <option>DIVORCED</option> <option>WIDOWED</option> <option>NEVER MARRIED</option> </select> </div> </td> <td> <div class="form-group"> <input disabled="disabled" class="disabled form-control tvfield"> </div> </td> </tr>');
-	}
-
-	for(var i = 0; i < 5; i++){
-		addrow();
-	}
-
 	//Handler for basic RPC
-	$("#scorebutton").click(function(){
+	$("#scorebutton").click(function(e){
+		e.preventDefault()
 		$(".tvfield").val("")
 		var data = [];
 		$("tbody tr").each(function(i){
@@ -53,6 +46,15 @@ $(function(){
 			"https://public.opencpu.org/ocpu/github/opencpu/tvscore/R/tv/json", 
 			window.location.href.match(".*/tvscore/")[0] + "R/tv/json"
 		)
-	)
+	);
+
+	//this is just to create a table
+	function addrow(){
+		$("tbody").append('<tr> <td> <div class="form-group"> <input type="number" min="20" max="80" class="form-control agefield" placeholder="Age"> </div> </td> <td> <div class="form-group"> <select class="form-control maritalfield"> <option>MARRIED</option> <option>DIVORCED</option> <option>WIDOWED</option> <option>NEVER MARRIED</option> </select> </div> </td> <td> <div class="form-group"> <input disabled="disabled" class="disabled form-control tvfield"> </div> </td> </tr>');
+	}
+
+	for(var i = 0; i < 5; i++){
+		addrow();
+	}
 });
 
