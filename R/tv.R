@@ -4,7 +4,7 @@
 #' ("MARRIED", 'DIVORCED", "WIDOWED or "NEVER MARRIED").
 #' 
 #' @export
-#' @importFrom stats predict
+#' @importFrom mgcv predict.gam
 #' @param input data passed on as \code{newdata} to \code{\link{predict}}
 #' @examples mydata <- data.frame(
 #'    age=c(24, 54, 32, 75),
@@ -24,6 +24,6 @@ tv <- function(input){
   newdata$age <- as.numeric(newdata$age)
 
   #tv_model is included with the package
-  newdata$tv <- as.vector(predict(tv_model, newdata = newdata))
+  newdata$tv <- as.vector(predict.gam(tv_model, newdata = newdata))
   return(newdata)
 }
