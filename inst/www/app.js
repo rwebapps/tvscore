@@ -34,13 +34,17 @@ $(function(){
 	//CSV file scoring
 	$("#csvfile").on("change", function loadfile(e){
 		if(!$("#csvfile").val()) return;
+		$("#outputcsv").addClass("hide").attr("href", "");
+		$(".spinner").show()
 		var req = ocpu.call("tv", {
 			input : $("#csvfile")[0].files[0]
 		}, function(tmp){
 			$("#outputcsv").removeClass("hide").attr("href", tmp.getLoc() + "R/.val/csv")
 		}).fail(function(){
 			alert(req.responseText)
-		})
+		}).always(function(){
+			$(".spinner").hide()
+		});
 	});
 
 	//update the example curl line with the current server
