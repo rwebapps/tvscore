@@ -7,4 +7,5 @@ Author: Jeroen Ooms
 Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
 Description: Example OpenCPU app to score data
 License: Apache 2
-LazyData: true
+LazyData: false
+Depends: mgcv

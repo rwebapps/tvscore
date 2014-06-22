@@ -1,4 +1,5 @@
 .onLoad <- function(lib, pkg){
-  #force loading of tv_model when package loads
-  #data(tv_model, package=pkg)
+  #automatically loads the dataset when package is loaded
+  #do not use this in combination with lazydata=true
+  data(tv_model, package = pkg, envir = parent.env(environment()))
 }
