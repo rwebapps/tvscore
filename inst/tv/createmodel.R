@@ -1,5 +1,4 @@
-#This file is not part of the package
-#It was used to create the model object
+#This script was used to create the model that is included with the package
 
 #General Social Survey data
 #For info see http://www3.norc.org/GSS+Website/Download/SPSS+Format/
@@ -7,14 +6,10 @@ download.file("http://publicdata.norc.org/GSS/DOCUMENTS/OTHR/2012_spss.zip", des
 unzip("2012_spss.zip")
 GSS <- foreign::read.spss("GSS2012.sav", to.data.frame=TRUE)
 
-#Variable names: http://www3.norc.org/GSS+Website/Browse+GSS+Variables/Mnemonic+Index/
-library(splines)
-mydata <- na.omit(GSS[c("age", "tvhours", "marital")])
-tv_model <- glm(tvhours ~ bs(age, 3) * marital , data = mydata)
-
 #GAM model
 library(mgcv)
-tv_model2 <- gam(tvhours ~ s(age, by=marital), data = mydata)
+mydata <- na.omit(GSS[c("age", "tvhours", "marital")])
+tv_model <- gam(tvhours ~ s(age, by=marital), data = mydata)
 
 #Vizualize the model
 library(ggplot2)
