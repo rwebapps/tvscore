@@ -13,7 +13,8 @@ tv_model <- gam(tvhours ~ s(age, by=marital), data = mydata)
 
 #Vizualize the model
 library(ggplot2)
-qplot(age, predict(tv_model), color=marital, geom="line", data=mydata, main="example model") +
+qplot(age, predict(tv_model), color=marital, geom="line", data=mydata) +
+  ggtitle("gam(tvhours ~ s(age, by=marital))") +
   ylab("Average hours of TV per day")
 
 #Save the model
