@@ -13,10 +13,10 @@
 #' tv(mydata)
 tv <- function(input){
   #input can either be csv file or data	
-  if(is.character(input) && file.exists(input)){
-  	newdata <- read.csv(input)
+  newdata <- if(is.character(input) && file.exists(input)){
+    read.csv(input)
   } else {
-  	newdata <- as.data.frame(input)
+    as.data.frame(input)
   }
   stopifnot("age" %in% names(newdata))
   stopifnot("marital" %in% names(newdata))
