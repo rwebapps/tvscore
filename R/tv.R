@@ -24,6 +24,6 @@ tv <- function(input){
   newdata$age <- as.numeric(newdata$age)
 
   #tv_model is included with the package
-  newdata$tv <- predict(tv_model, newdata = newdata)
+  newdata$tv <- as.vector(predict(tv_model, newdata = newdata))
   return(newdata)
 }
