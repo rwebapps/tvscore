@@ -1,10 +1,10 @@
 Package: tvscore
 Type: Package
 Title: Score data to predict TV hours
-Version: 0.2
-Date: 2014-06-21
+Version: 0.3
+Date: 2017-05-13
 Author: Jeroen Ooms
-Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
+Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Description: Example OpenCPU app to score data
 License: Apache License 2.0
 LazyData: false
